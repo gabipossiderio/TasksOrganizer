@@ -9,8 +9,6 @@ export const authOptions = {
     }),
   ],
   secret: process.env.SECRET,
-  debug: true, 
-  useSecureCookies: false,
 };
 
 
