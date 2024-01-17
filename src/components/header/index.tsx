@@ -35,7 +35,10 @@ export function Header() {
               </button>
             ) : (
               <button
-                onClick={() => signIn("google")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  signIn("google")
+                }}
                 className="py-1 px-6 rounded-3xl border-2 border-white cursor-pointer hover:scale-105 hover:bg-white hover:text-black hover:font-bold transition-all ease-in-out text-white mt-2 sm:mt-0 sm:ml-4"
               >
                 Sign In
