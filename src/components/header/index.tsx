@@ -3,11 +3,13 @@ import Link from "next/link";
 import { RxDashboard } from "react-icons/rx";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { useMediaQuery } from "react-responsive";
-
+import { useRouter } from "next/router";
 
 export function Header() {
   const { data: session, status } = useSession();
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 640 });
+  const router = useRouter();
+  const isDashboardPage = router.pathname === '/dashboard';
 
   return (
     <header className="w-full h-auto min-h-20 bg-black flex items-center justify-center">
@@ -23,9 +25,9 @@ export function Header() {
           <></>
         ) : (
           <div className="flex flex-row items-center">
-          {session?.user && (
+          {session?.user && !isDashboardPage && (
             <Link
-              className="bg-white text-black py-2 px-5 sm:px-4 rounded-md my-0 sm:mx-4"
+              className="bg-white text-black py-2 px-5 sm:px-4 rounded-lg my-0 hover:border-2 border-white hover:scale-105 hover:font-bold transition-all hover:text-white hover:bg-black cursor-pointer ease-in-out sm:mx-4"
               href="/dashboard"
             >
               {isDesktopOrLaptop ?  "Dashboard" : <RxDashboard />}
@@ -34,7 +36,7 @@ export function Header() {
           {session ? (
             <button
               onClick={() => signOut()}
-              className="py-2 px-5 rounded-3xl border-2 border-white cursor-pointer hover:scale-105 hover:bg-white hover:text-black hover:font-bold transition-all ease-in-out text-white mt-0 ml-2 sm:ml-4"
+              className="py-2 px-5 rounded-3xl border-2 border-white cursor-pointer hover:scale-105 hover:bg-white hover:text-black hover:font-bold transition-all ease-in-out text-white mt-0 ml-4"
             >
              {isDesktopOrLaptop ?  "Sign Out" : <FiLogOut />}
             </button>

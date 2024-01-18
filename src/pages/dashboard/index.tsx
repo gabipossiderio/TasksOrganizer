@@ -179,11 +179,11 @@ export default function Dashboard({ user }: DashboardProps) {
               key={item.id}
               className="mb-4 relative leading-normal min-h-24 flex border-2 border-neutral-500 rounded p-1 flex-col items-start"
             >
-              <div className="flex  w-full items-center justify-between">
+              <div className="flex  w-full items-center p-1 justify-between">
                 {item.public ? (
                   <div className="flex w-full items-center absolute top-1 justify-between">
                     <div className="flex items-center">
-                      <small className="bg-blue-500/70 text-xs rounded text-white py-1 px-1 uppercase">
+                      <small className="bg-blue-500/70 tracking-wide select-none text-xs rounded text-white py-1 px-1 uppercase">
                         Public Task
                       </small>
                       <button
@@ -197,7 +197,7 @@ export default function Dashboard({ user }: DashboardProps) {
                 ) : (
                   <div className="flex w-full items-center absolute top-1 justify-between">
                     <div className="flex items-center">
-                      <small className="bg-red-500/70 text-xs rounded text-white py-1 px-1 uppercase">
+                      <small className="bg-red-500/70 text-xs select-none rounded text-white py-1 px-1 uppercase">
                         Private Task
                       </small>
                       <p className="bg-transparent border-none border-0 mx-2">
@@ -206,8 +206,7 @@ export default function Dashboard({ user }: DashboardProps) {
                     </div>
                   </div>
                 )}
-                <div className="flex absolute right-2 bottom-9 ">
-                  {" "}
+                <div className="flex absolute right-2 bottom-1/2 transform translate-y-1/2">
                   <button
                     onClick={() => handleDelete(item.id)}
                     className="cursor-pointer font-bold bg-transparent border-0 my-0 mx-2"
@@ -217,15 +216,25 @@ export default function Dashboard({ user }: DashboardProps) {
                 </div>
               </div>
 
-              <div className="flex min-h-24 items-center justify-between w-full">
+              <div className="flex min-h-24 p-1 items-center justify-center w-full">
                 {item.public ? (
-                  <Link href={`/task/${item.id}`}>
-                    <p className="sm:text-lg text-sm mt-3 mr-4 text-pretty p-4">
-                      {item.task}
-                    </p>
-                  </Link>
+                  <div className="flex flex-col w-full">
+                    <div className="text-center">
+                      <p className="sm:text-xl text-sm text-slate-800 mt-4 text-pretty py-2 px-10">
+                        {item.task}
+                      </p>
+                    </div>
+
+                    <div className="mt-1 ">
+                      <Link href={`/task/${item.id}`}>
+                        <small className="uppercase text-xs px-2 py-1 hover:scale-110 hover:bg-blue-800/90 hover:text-white transition-all ease-in-out text-blue-800/90 font-medium tracking-wide cursor-pointer rounded bg-slate-100/80">
+                          Ver Tarefa
+                        </small>
+                      </Link>
+                    </div>
+                  </div>
                 ) : (
-                  <p className="sm:text-lg text-sm mt-3 mr-4 text-pretty p-4">
+                  <p className="sm:text-xl text-sm text-slate-800 mt-3 mr-4 text-center text-pretty py-2 px-10">
                     {item.task}
                   </p>
                 )}

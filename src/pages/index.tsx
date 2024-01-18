@@ -43,10 +43,10 @@ export default function Home({ posts, comments }: HomeProps) {
           </span>
         </h1>
         <section className="flex flex-col sm:flex-row sm:gap-0 gap-5 items-center justify-around">
-          <article className="bg-white py-4 px-11 rounded-md hover:scale-105 transition-all duration-500 ease-in-out">
+          <article className="bg-white py-4 px-11 rounded">
             <p>+{posts} posts</p>
           </article>
-          <article className="bg-white py-4 px-6 rounded-md hover:scale-105 transition-all duration-500 ease-in-out">
+          <article className="bg-white py-4 px-6 rounded">
             <p>+{comments} comments</p>
           </article>
         </section>
