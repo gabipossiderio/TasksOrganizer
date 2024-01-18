@@ -15,6 +15,17 @@ export default function Home({ posts, comments }: HomeProps) {
     <div className="bg-black select-none w-full h-[calc(100vh-_80px)] flex justify-center items-center flex-col">
       <Head>
         <title>Tasks+ | Organize Yourself</title>
+        <meta property="og:url" content="https://tasksplus.gabis.dev/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Tasks+" />
+        <meta
+          property="og:description"
+          content="Organize your studies and tasks"
+        />
+        <meta
+          property="og:image"
+          content="https://tasksplus.gabis.dev/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.397efab8.png&w=640&q=75"
+        />
       </Head>
       <main className="flex flex-col gap-2">
         <div className="flex flex-col items-center justify-center">
