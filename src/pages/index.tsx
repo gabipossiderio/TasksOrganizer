@@ -24,7 +24,7 @@ export default function Home({ posts, comments }: HomeProps) {
         />
         <meta
           property="og:image"
-          content="https://tasksplus.gabis.dev/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.397efab8.png&w=640&q=75"
+          content="https://tasksplus.gabis.dev/assets/preview.png"
         />
       </Head>
       <main className="flex flex-col gap-2">
