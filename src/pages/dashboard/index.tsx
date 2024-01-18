@@ -127,7 +127,7 @@ export default function Dashboard({ user }: DashboardProps) {
   return (
     <div className="w-full">
       <Head>
-        <title>My Dashboard</title>
+        <title>Dashboard</title>
       </Head>
       <main className="drop-shadow">
         <section className="w-full bg-black flex items-center justify-center">
